@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import factory from "../ethereum/factory";
-import { Card, Button } from  'semantic-ui-react'
+import { Card, Button } from 'semantic-ui-react'
+import Layout from "../components/Layout";
 
 
 class CampaignIndex extends Component {
@@ -24,22 +25,28 @@ class CampaignIndex extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello World</h1>
+      <Layout>
+        {/* 
+          All the interior JSX between the open and close Layout
+          gets passes as as a property "children" into the Layout component
+        */}
         <div>
-          <link
-            async
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"
-          />
-          {this.renderCampaigns()}
-          <Button
-            content="Create Campaign"
-            icon="add circle"
-            primary={true}
-          />
+          <h3>Open Campaigns</h3>
+          <div>
+            <link
+              async
+              rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"
+            />
+            {this.renderCampaigns()}
+            <Button
+              content="Create Campaign"
+              icon="add circle"
+              primary={true}
+            />
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
