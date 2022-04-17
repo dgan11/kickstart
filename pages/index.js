@@ -1,24 +1,23 @@
 import React, { Component } from "react";
 import factory from "../ethereum/factory";
-import { Card, Button } from 'semantic-ui-react'
+import { Card, Button } from "semantic-ui-react";
 import Layout from "../components/Layout";
-
 
 class CampaignIndex extends Component {
   // Requirement/Exclusive to Next.js - get the data without having to render the component
   // static not assigned to instances of class, but the class itself
   static async getInitialProps() {
     const campaigns = await factory.methods.getDeployedCampaigns().call();
-    return { campaigns }
+    return { campaigns };
   }
 
   renderCampaigns() {
-    const items = this.props.campaigns.map(address => {
+    const items = this.props.campaigns.map((address) => {
       return {
         header: address,
         description: <a>View Campaign</a>,
-        fluid: true
-      }
+        fluid: true,
+      };
     });
     return <Card.Group items={items} />;
   }
