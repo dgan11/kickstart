@@ -1,11 +1,14 @@
 // Component that shows details of a campaign
 import React, { Component } from 'react'
+import Layout from '../../components/Layout';
 
 class CampaignShow extends Component {
   render() {
     return (
-      <h3>Campaign Show</h3>
-    )
+      <Layout>
+        <h3>Campaign Show</h3>
+      </Layout>
+    );
   }
 }
 

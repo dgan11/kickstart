@@ -29,4 +29,10 @@ for (let contract in output) {
   }
 }
 
-console.log("e");
+console.log("compile.js finished");
+
+/**
+ * Run by 
+ * 1. cd into `./ethereum`
+ * 2. node compile.js
+ */

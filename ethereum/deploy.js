@@ -1,6 +1,3 @@
-require("dotenv").config();
-console.log("*** process.env.MNEMONIC: ", process.env.MNEMONIC);
-
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
@@ -29,3 +26,10 @@ const deploy = async () => {
   provider.engine.stop();
 };
 deploy();
+
+
+/**
+ * Run by 
+ * 1. cd into `./ethereum`
+ * 2. node deploy.js
+ */
