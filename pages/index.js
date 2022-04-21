@@ -8,6 +8,7 @@ class CampaignIndex extends Component {
   // Requirement/Exclusive to Next.js - get the data without having to render the component
   // static not assigned to instances of class, but the class itself
   static async getInitialProps() {
+    console.log('index getInitalProps')
     const campaigns = await factory.methods.getDeployedCampaigns().call();
     return { campaigns };
   }
