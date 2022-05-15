@@ -2,7 +2,8 @@
 import React, { Component } from 'react'
 import { Card } from 'semantic-ui-react';
 import Layout from '../../components/Layout';
-import Campaign from '../../ethereum/campaign'
+import Campaign from '../../ethereum/campaign';
+import web3 from '../../ethereum/web3';
 
 class CampaignShow extends Component {
 
@@ -25,35 +26,35 @@ class CampaignShow extends Component {
   renderCards() {
     const items = [
       {
-        header: "Minimum Contribution",
-        description:
-          "Leverage agile frameworks to provide a robust synopsis for high level overviews.",
-        meta: `${this.props.minimumContribution} wei`,
-      },
-      {
-        header: "balance",
-        description:
-          "Bring to the table win-win survival strategies to ensure proactive domination.",
-        meta: `${this.props.balance}`,
-      },
-      {
-        header: "Request Count",
-        description:
-          "Capitalise on low hanging fruit to identify a ballpark value added activity to beta test.",
-        meta: `${this.props.requestCount}`,
-      },
-      {
-        header: "Approver Count",
-        description:
-          "Capitalise on low hanging fruit to identify a ballpark value added activity to beta test.",
-        meta: `${this.props.approverCount}`,
-      },
-      {
         // header: `${this.props.manager.slice(0,6)}...${this.props.manager.slice(-4)}`,
         header: `${this.props.manager}`,
         meta: "Address of Manager",
         description: "The manager created this campaign and can create ",
-        style: { overflowWrap: 'break-word'}
+        style: { overflowWrap: "break-word" },
+      },
+      {
+        header: `${this.props.minimumContribution} wei`,
+        meta: `Minimum Contribution`,
+        description:
+          "Smallest amount you can enter and be part of the campaign",
+      },
+      {
+        header: `${this.props.requestCount}`,
+        description:
+          "Number of Requests.",
+        meta: `Request Count`,
+      },
+      {
+        header: `${this.props.approverCount}`,
+        description:
+          "Number of approvers.",
+        meta: `Approver Account`,
+      },
+      {
+        header: `${web3.utils.fromWei(this.props.balance, 'ether')}`,
+        description:
+          "Balance locked in the contract.",
+        meta: `balance`,
       },
     ];
 
