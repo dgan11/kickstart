@@ -3,8 +3,14 @@ Grider solidity
 Creating a crowdfunding type Web3 App
 
 ### Get Started
-- `npm install`
-- `npm run start`
+1. `npm install`
+2. `npm run start`
+
+### Redeploying a Contract
+1. `cd ethereum`
+2. `node compile.js` -- delete and remake our "./ethereum/build" folder
+3. `node deploy.js` -- redeploys and will log the new contractAddress
+4. Replace the address in "./ethereum/contracts/factory.js"
 
 
 ### Why Next.js
