@@ -11,6 +11,7 @@ class CampaignShow extends Component {
 
   // Hook to get data before this component even loads.
   static async getInitialProps(props) {
+    console.log('~~~ getInitalProps(props) in show.js ~~~')
     const campaignAddress = props.query.address;
     const campaign = Campaign(campaignAddress)
     const summary = await campaign.methods.getSummary().call();
