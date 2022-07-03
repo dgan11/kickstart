@@ -13,7 +13,8 @@ class CampaignShow extends Component {
     const campaignAddress = props.query.address;
     const campaign = Campaign(campaignAddress)
     const summary = await campaign.methods.getSummary().call();
-    console.log('summary: ', summary)
+    console.log('show.js | summary: ', summary)
+    // console.log('show.js | props: ', props)
     return {
       minimumContribution: summary['0'],
       balance: summary['1'],
@@ -21,6 +22,7 @@ class CampaignShow extends Component {
       approverCount: summary['3'],
       manager: summary['4'],
       campaignAddress: campaignAddress,
+      address: props.query.address,
     };
   }
 
@@ -71,7 +73,7 @@ class CampaignShow extends Component {
             { this.renderCards() }
           </Grid.Column>
           <Grid.Column width={6}>
-            <ContributeForm />
+            <ContributeForm address={this.props.address}/>
           </Grid.Column>
         </Grid>
       </Layout>
