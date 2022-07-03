@@ -4,7 +4,7 @@ Creating a crowdfunding type Web3 App
 
 ### Get Started
 1. `npm install`
-2. `npm run start`
+2. `npm run dev` (start also)
 
 ### Redeploying a Contract
 1. `cd ethereum`
